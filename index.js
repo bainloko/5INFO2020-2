@@ -28,6 +28,10 @@ app.post('/', function(req, res){
     res.send("Oi mundo, via Post!");
 });
 
+app.get('/autor', function(req, res){
+    res.send("Desenvolvido por Kauã Maia Cousillas, na disciplina de Programação III")
+});
+
 /* fim do código do servidor
 app.listen(3000, ()=>console.log("Conexão inicializada com sucesso.")); //somente com comandos de uma só linha
 */
