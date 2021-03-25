@@ -10,9 +10,9 @@ var bodyParser = require("body-parser"); //recebe a requisição body e faz o pa
 var cookieParser = require("cookie-parser"); //recebe cookies e faz o parse para uma interpretação adequada pelo JavaScript
 var path = require("path");
 
+app.use(cookieParser()); //inicializa o cookie-parser
 app.use(bodyParser.json()); //inicializa, em json, o body-parser
 app.use(bodyParser.urlencoded({extended:false})); //define o body-parser como não estendido
-app.use(cookieParser()); //inicializa o cookie-parser
 
 app.set("view engine", "ejs"); //define a view engine do servidor como o ejs
 
@@ -22,6 +22,18 @@ app.use(express.static(path.join(__dirname, "public"))); //define a localizaçã
 app.get('/', function(req, res){
     //res.send("Oi mundo.");
     res.render("formulario.ejs");
+});
+
+app.get('/add', function(req, res){
+    res.render("add.ejs");
+});
+
+app.get('/edit', function(req, res){
+    res.render("edit.ejs");
+});
+
+app.get('/list', function(req, res){
+    res.render("list.ejs");
 });
 
 app.post('/', function(req, res){

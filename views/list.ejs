@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!--
+        * KAUA MAIA COUSILLAS
+        * TDSI, PROGRAMAÇÃO III
+        * 25/03/2021
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List.ejs</title>
+    <style>
+        table, tr, td {
+            border: solid 1px black;
+        }
+
+        th {
+            border: solid 3px black;
+        }
+
+        td, th {
+            padding: 5px;
+            padding-left: 4px;
+            padding-right: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="GET">
+        <label>Pesquisa:&nbsp;</label><input type="text" name="txtPesquisa" id="txtPesquisa">
+        <input type="submit" value="Pesquisar" />
+    </form>
+    <p><a href="/add">Adicionar Livro</a></p>
+    <br>
+    <table>
+        <tr>
+            <th>ID:</th>
+            <th>Livro:</th>
+            <th>Autor(es):</th>
+            <th>Data de publicação:</th>
+            <th>Editora:</th>
+            <th>E-mail para contato:</th>
+            <th>Telefone para contato:</th>
+            <th>Quantidade no estoque:</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A Revolução dos Bichos</td>
+            <td>George Orwell</td>
+            <td>1949</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>1</td>
+            <td>Editar</td>
+            <td>Deletar</td>
+        </tr>
+    </table>
+</body>
+</html>
