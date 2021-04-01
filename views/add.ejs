@@ -11,13 +11,13 @@
     <title>Add.ejs</title>
 </head>
 <body>
+    <h1>Cadastro de livros</h1>
     <form action="" method="POST">
         <label>Livro:&nbsp;</label><input type="text" name="txtLivro" id="txtLivro" required><br>
         <label>Autor(es):&nbsp;</label><input type="text" name="txtAutor" id="txtAutor" required><br>
         <label>Data de publicação:&nbsp;</label><input type="date" name="txtDataPubli" id="txtDataPubli" required><br>
         <label>Editora:&nbsp;</label><input type="text" name="txtEditora" id="txtEditora" required><br>
-        <label>E-mail para contato:&nbsp;</label><input type="email" name="txtEmail" id="txtEmail" required><br>
-        <label>Telefone para contato:&nbsp;</label><input type="tel" name="txtTelefone" id="txtTelefone" pattern="{55}[0-9]{11,13}" required><br>
+        <label>E-mail para contato:&nbsp;</label><input type="email" name="txtEmail" id="txtEmail"><br>
         <label>Quantidade no estoque:&nbsp;</label><input type="number" step="1" min="1" name="numQuantidade" required><br>
         <input type="submit" value="Enviar"/>
     </form>
