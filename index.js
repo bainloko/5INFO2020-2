@@ -9,6 +9,7 @@ const app = express(); //construtor do servidor
 var bodyParser = require("body-parser"); //recebe a requisição body e faz o parse para uma interpretação adequada pelo JavaScript
 var cookieParser = require("cookie-parser"); //recebe cookies e faz o parse para uma interpretação adequada pelo JavaScript
 var path = require("path");
+var Livro = require("./model/livros.js");
 
 app.use(cookieParser()); //inicializa o cookie-parser
 app.use(bodyParser.json()); //inicializa o body-parser em json
@@ -37,7 +38,22 @@ app.get('/add', function(req, res){
 
 //salvar os dados adicionados no BD
 app.post('/add', function(req, res){
-    res.render('add.ejs');
+    var livros = new Livro({
+        livro: req.body.txtLivro,
+        autor: req.body.txtAutor,
+        data: req.body.txtDataPubli,
+        editora: req.body.txtEditora,
+        email: req.body.txtEmail,
+        quantidade: req.body.numQuantidade
+    });
+    
+    livros.save(function(err){
+        if(err){
+            console.log("Houve um erro inesperado... Por favor, tente novamente! Código: " + err);
+        } else {
+            res.redirect('/');
+        }
+    });
 });
 
 //editar uma entrada já existente; inicializar a tela edit em branco
