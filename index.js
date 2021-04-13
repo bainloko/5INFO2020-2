@@ -10,6 +10,7 @@ var bodyParser = require("body-parser"); //recebe a requisição body e faz o pa
 var cookieParser = require("cookie-parser"); //recebe cookies e faz o parse para uma interpretação adequada pelo JavaScript
 var path = require("path");
 var Livro = require("./model/livros.js");
+const { RSA_NO_PADDING } = require("constants");
 
 app.use(cookieParser()); //inicializa o cookie-parser
 app.use(bodyParser.json()); //inicializa o body-parser em json
@@ -50,6 +51,7 @@ app.post('/add', function(req, res){
     livros.save(function(err){
         if(err){
             console.log("Houve um erro inesperado... Por favor, tente novamente! Código: " + err);
+            res.send("Houve um erro inesperado... Por favor, tente novamente! Código: " + err);
         } else {
             res.redirect('/');
         }
