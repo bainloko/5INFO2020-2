@@ -27,36 +27,40 @@
     </style>
 </head>
 <body>
-    <h1>Listagem de livros cadastrados</h1>
-    <form action="" method="GET">
+    <h1>Lista de livros cadastrados</h1>
+    <form action="" method="POST">
         <label>Pesquisa:&nbsp;</label><input type="text" name="txtPesquisa" id="txtPesquisa">
         <input type="submit" value="Pesquisar" />
     </form>
-    <p><a href="/add">Adicionar Livro</a></p>
+    <p><a href="/add">Cadastrar um novo livro</a>&ensp;<a href="/autor">Autor, créditos</a></p>
     <br>
     <table>
         <tr>
             <th>ID:</th>
             <th>Livro:</th>
             <th>Autor(es):</th>
-            <th>Data de publicação:</th>
+            <th>Ano da publicação:</th>
             <th>Editora:</th>
             <th>E-mail para contato:</th>
             <th>Quantidade no estoque:</th>
             <th colspan="2">Ação</th>
 
         </tr>
+        <%Livros.forEach(function(livro){%>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td> <!-- achar um jeito de chamar os dados do banco de dados pra cá -->
-            <td>Editar</td>
-            <td>Deletar</td>
+            <td><%=livro._id%></td>
+            <td><%=livro.nomeLivro%></td>
+            <td><%=livro.autor%></td>
+            <td><%=livro.anoPubli%></td>
+            <td><%=livro.editora%></td>
+            <td><%=livro.email%></td>
+            <td><%=livro.quantidade%></td>
+            <td><a href="/edit/<%=livro._id%>">Editar</a></td>
+            <td><a href="/del/<%=livro._id%>">Deletar</a></td>
         </tr>
+        <% }) %>
     </table>
+
+    <h1><%=msg%></h1>
 </body>
 </html>

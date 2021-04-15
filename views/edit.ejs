@@ -11,16 +11,18 @@
     <title>Edit.ejs</title>
 </head>
 <body>
-    <h1>Editar cadastro</h1>
+    <h1>Editar cadastro já existente</h1>
+    <p><a href="/add">Cadastrar um novo livro</a>&ensp;<a href="/">Voltar para a página principal</a></p><br>
     <form action="" method="POST">
-        <label>ID:&nbsp;</label><input type="text" name="txtID" id="txtID" readonly><br>
-        <label>Livro:&nbsp;</label><input type="text" name="txtLivro" id="txtLivro" value="" required><br>
-        <label>Autor(es):&nbsp;</label><input type="text" name="txtAutor" id="txtAutor" value="" required><br>
-        <label>Data de publicação:&nbsp;</label><input type="date" name="txtDataPubli" id="txtDataPubli" value="" required><br>
-        <label>Editora:&nbsp;</label><input type="text" name="txtEditora" id="txtEditora" value="" required><br>
-        <label>E-mail para contato:&nbsp;</label><input type="email" name="txtEmail" id="txtEmail" value=""><br>
-        <label>Quantidade no estoque:&nbsp;</label><input type="number" step="1" min="1" name="numQuantidade" value="" required><br>
+        <label>ID:&nbsp;</label><input type="text" name="txtID" id="txtID" value="<%=livro._id%>" readonly><br>
+        <label>Livro:&nbsp;</label><input type="text" name="txtNomeLivro" id="txtNomeLivro" value="<%=livro.nomeLivro%>" required><br>
+        <label>Autor(es):&nbsp;</label><input type="text" name="txtAutor" id="txtAutor" value="<%=livro.autor%>" required><br>
+        <label>Ano da publicação:&nbsp;</label><input type="number" step="1" min="1" name="txtAnoPubli" id="txtAnoPubli" value="<%=livro.anoPubli%>" required><br>
+        <label>Editora:&nbsp;</label><input type="text" name="txtEditora" id="txtEditora" value="<%=livro.editora%>" required><br>
+        <label>E-mail para contato:&nbsp;</label><input type="email" name="txtEmail" id="txtEmail" value="<%=livro.email%>"><br>
+        <label>Quantidade no estoque:&nbsp;</label><input type="number" step="1" min="1" name="numQuantidade" value="<%=livro.quantidade%>" required><br>
         <input type="submit" value="Enviar"/>
+        <h1><%=msg%></h1>
     </form>
 </body>
 </html>

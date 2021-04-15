@@ -7,9 +7,9 @@
 var conexao = require("../config/conexao.js");
 
 var livroSchema = conexao.Schema({
-    livro:{type:String},
+    nomeLivro:{type:String},
     autor:{type:String},
-    data:{type:Date},
+    anoPubli:{type:Number},
     editora:{type:String},
     email:{type:String},
     quantidade:{type:Number}
