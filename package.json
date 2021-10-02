@@ -12,7 +12,7 @@
     "sistema",
     "web"
   ],
-  "author": "Kaua Maia Cousillas",
+  "author": "@maiakauaa",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
